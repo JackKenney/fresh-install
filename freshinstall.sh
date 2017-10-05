@@ -93,6 +93,7 @@ git config --global user.name "Jack Kenney"
 git config --global credential.helper cache
 
 # pdf concatenator: pdftk
+# ex: pdftk pdf1.pdf pdf2.pdf output pdf-cat.pdf
 sudo apt install pdftk
 
 #python
