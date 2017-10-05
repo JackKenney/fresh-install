@@ -92,6 +92,9 @@ git config --global user.email "kenney.jnk@gmail.com"
 git config --global user.name "Jack Kenney"
 git config --global credential.helper cache
 
+# pdf concatenator: pdftk
+sudo apt install pdftk
+
 #python
 sudo apt install python
 sudo apt install python-pip
