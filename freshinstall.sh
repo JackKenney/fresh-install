@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#FULL INSSTALL SCRIPT FOR NEW LINUX I'M TIRED OF DOING IT ALL OVER THE PLACE:
+#FULL INSTALL SCRIPT FOR NEW LINUX I'M TIRED OF DOING IT ALL OVER THE PLACE:
 #RUN with sudo sh filename.sh AND ENTER PASSWORD.
 
 #To invert colors on key command use and bind to keyboard: xcalib -i -a
@@ -10,7 +10,7 @@ echo "Execute this program as follows: 'yes | sudo sh freshinstall.sh'"
 echo "killing existing installation processes"
 sudo killall dpkg
 sudo dpkg --configure -a
-
+#=========================================
 #ADD REPOS BELOW HERE:
 echo "adding repos:"
 #PAPER icon and cursor
@@ -36,7 +36,13 @@ sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
+# Brightness Controller
+sudo add-apt-repository ppa:apandada1/brightness-controller
 
+#vscode
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 #===========================================
 #REMOVE AUTO UPDATER:
 #APT remove update-notifier
@@ -91,10 +97,12 @@ sudo apt-get install git
 git config --global user.email "kenney.jnk@gmail.com"
 git config --global user.name "Jack Kenney"
 git config --global credential.helper cache
-
-# pdf concatenator: pdftk
-# ex: pdftk pdf1.pdf pdf2.pdf output pdf-cat.pdf
-sudo apt install pdftk
+mkdir Projects
+cd Projects
+git clone "https://github.com/jackkenney/assignments.git"
+git clone "https://github.com/lbialik/brightness-redshift.git"
+git clone "https://github.com/jackkenney/binds-work.git"
+cd ..
 
 #python
 sudo apt install python
@@ -104,8 +112,17 @@ sudo apt install python3
 sudo apt install python3-pip
 pip3 install --upgrade pip3
 
+#vscode
+sudo apt-get install code
+
 #docker
 sudo apt-get install docker-ce
+
+#brightness controller
+sudo apt install brightness-controller
+
+#laptop touchpad controller
+sudo apt install xserver-xorg-input-synaptics
 
 #LAST
 #catch any trailing packages:
@@ -122,3 +139,43 @@ sudo apt autoremove
 #this makes the last opened OS the default boot
 sudo echo "\nGRUB_DEFAULT=saved\nGRUB_SAVEDEFAULT=true\n" >> /etc/default/grub
 sudo update-grub
+
+
+
+### Keyboard Shorcut Catalogue:
+
+# "invert" > xcalib -invert -alter > Alt+I
+# "System Monitor" > gnome-system-monitor > Ctrl+Alt+Delete
+# "screengrab" > gnome-screenshot -a > Ctrl+Alt+4
+# "redshift a" > redshift -O 6500 > Alt+W
+# "redshift b" > redshift -O 5000 > Alt+E
+# "redshift c" > redshift -O 3500 > Alt+R
+# "redshift d" > redshift -O 3000 > Alt+F
+# "redshift e" > redshift -O 2500 > Alt+D
+# "redshift f" > redshift -O 2000 > Alt+S
+# "rotate normal" > xrandr --output eDP-1 --rotate normal > Super+Up
+# "rotate left" > xrandr --output eDP-1 --rotate left > Super+Left
+# "rotate right" > xrandr --output eDP-1 --rotate right > Super+Right
+# "rotate inverted" > xrandr --output eDP-1 --rotate inverted > Super+Down
+# "resolution small" > xrandr --output eDP-1 --mode 1792x1008_60.00 > Alt+Q
+# "resolution very big" > xrandr --output eDP-1 --mode 1920x1080 > Alt+V (very big)
+# "touchpad off" > synclient TouchpadOff=1 > Alt+N (no mouse)
+# "touchpad on" > synclient TouchpadOff=0 > Alt+M (mouse)
+# "brightness controller" > brightness-controller > Alt+B (brightness)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
