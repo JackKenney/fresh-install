@@ -122,7 +122,7 @@ sudo apt-get install docker-ce
 sudo apt install brightness-controller
 
 #laptop touchpad controller
-sudo apt install xserver-xorg-input-synaptics
+sudo apt inall xserver-xorg-input-synaptics
 
 #LAST
 #catch any trailing packages:
@@ -137,7 +137,8 @@ sudo apt autoremove
 
 #change grub settings to preferred user interface
 #this makes the last opened OS the default boot
-sudo echo "\nGRUB_DEFAULT=saved\nGRUB_SAVEDEFAULT=true\n" >> /etc/default/grub
+sudo echo "GRUB_DEFAULT=saved" >> /etc/default/grub
+sudo echo "GRUB_SAVEDEFAULT=true" >> /etc/default/grub
 sudo update-grub
 
 
