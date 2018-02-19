@@ -97,8 +97,8 @@ sudo apt-get install git
 git config --global user.email "kenney.jnk@gmail.com"
 git config --global user.name "Jack Kenney"
 git config --global credential.helper cache
-mkdir Projects
-cd Projects
+mkdir ~/Projects
+cd ~/Projects
 git clone "https://github.com/jackkenney/assignments.git"
 git clone "https://github.com/lbialik/brightness-redshift.git"
 git clone "https://github.com/jackkenney/binds-work.git"
