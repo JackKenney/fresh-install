@@ -17,27 +17,9 @@ echo "adding repos:"
 sudo add-apt-repository ppa:snwh/pulp
 #Arc theme
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/arc-theme.list"
-#Adapta theme
-sudo apt-add-repository ppa:tista/adapta -y
-#Numix theme
-sudo add-apt-repository ppa:numix/ppa
-#SPOTIFY
-# 1. Add the Spotify repository signing key to be able to verify downloaded packages
-#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
-# 2. Add the Spotify repository
-#echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 #GOOGLE
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-#Docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo apt-key fingerprint 0EBFCD88
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-# Brightness Controller
-sudo add-apt-repository ppa:apandada1/brightness-controller
 
 #vscode
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -112,17 +94,22 @@ sudo apt install python3
 sudo apt install python3-pip
 pip3 install --upgrade pip3
 
+wget http://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
+sh Anaconda3-4.3.0-Linux-x86_64.sh
+conda create --name cs383 python=3.6
+conda create --name binds python=3.6
+
 #vscode
 sudo apt-get install code
-
-#docker
-sudo apt-get install docker-ce
 
 #brightness controller
 sudo apt install brightness-controller
 
 #laptop touchpad controller
-sudo apt inall xserver-xorg-input-synaptics
+sudo apt install xserver-xorg-input-synaptics
+
+#ubuntu-gnome-desktop
+sudo apt install ubuntu-gnome-desktop
 
 #LAST
 #catch any trailing packages:
@@ -135,25 +122,26 @@ sudo apt-get install ubuntu-restricted-extras
 #clear all unnecessary packages
 sudo apt autoremove
 
+#own everything in your home folder
+sudo chown -R echo .
+
 #change grub settings to preferred user interface
 #this makes the last opened OS the default boot
 sudo echo "GRUB_DEFAULT=saved" >> /etc/default/grub
 sudo echo "GRUB_SAVEDEFAULT=true" >> /etc/default/grub
 sudo update-grub
 
-
+# Adding Keyboard shortcuts:
+python3 ./set_keybinding.py 'open gedit' 'gedit' '<Alt>7'
+python3 ./set_keybinding.py 'invert' 'xcalib -invert -alter' '<Alt>I'
+python3 ./set_keybinding.py 'System Monitor' 'gnome-system-monitor' '<Ctrl><Alt><Delete>'
+# TODO finish these...
 
 ### Keyboard Shorcut Catalogue:
 
 # "invert" > xcalib -invert -alter > Alt+I
 # "System Monitor" > gnome-system-monitor > Ctrl+Alt+Delete
 # "screengrab" > gnome-screenshot -a > Ctrl+Alt+4
-# "redshift a" > redshift -O 6500 > Alt+W
-# "redshift b" > redshift -O 5000 > Alt+E
-# "redshift c" > redshift -O 3500 > Alt+R
-# "redshift d" > redshift -O 3000 > Alt+F
-# "redshift e" > redshift -O 2500 > Alt+D
-# "redshift f" > redshift -O 2000 > Alt+S
 # "rotate normal" > xrandr --output eDP-1 --rotate normal > Super+Up
 # "rotate left" > xrandr --output eDP-1 --rotate left > Super+Left
 # "rotate right" > xrandr --output eDP-1 --rotate right > Super+Right
@@ -162,21 +150,8 @@ sudo update-grub
 # "resolution very big" > xrandr --output eDP-1 --mode 1920x1080 > Alt+V (very big)
 # "touchpad off" > synclient TouchpadOff=1 > Alt+N (no mouse)
 # "touchpad on" > synclient TouchpadOff=0 > Alt+M (mouse)
-# "brightness controller" > brightness-controller > Alt+B (brightness)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# "brightness up" > python3 /home/<user>/brightness-redshift/light_adjust.py up > Shift+Alt+UP
+# "brightness down" > python3 /home/<user>/brightness-redshift/light_adjust.py down > Shift+Alt+DOWN
+# "brightness right" > python3 /home/<user>/brightness-redshift/light_adjust.py right > Shift+Alt+RIGHT
+# "brightness left" > python3 /home/<user>/brightness-redshift/light_adjust.py left > Shift+Alt+LEFT
 
