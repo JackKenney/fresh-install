@@ -10,13 +10,18 @@ Generic: python3 /path/to/script.py '<name>' '<command>' '<key_combination>'
 """
 
 # defining keys & strings to be used
+# subprocess.call(['export', 'GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/'])
 key = "org.gnome.settings-daemon.plugins.media-keys custom-keybindings"
 subkey1 = key.replace(" ", ".")[:-1]+":"
 item_s = "/"+key.replace(" ", "/").replace(".", "/")+"/"
 firstname = "custom"
 # get the current list of custom shortcuts
 get = lambda cmd: subprocess.check_output(["/bin/bash", "-c", cmd]).decode("utf-8")
-current = eval(get("gsettings get "+key))
+if sys.argv[4]:
+    current = eval(get("gsettings get " + key)[3:])
+else:
+    current = eval(get("gsettings get " + key)[:])
+print(current)
 # make sure the additional keybinding mention is no duplicate
 n = 1
 while True:
