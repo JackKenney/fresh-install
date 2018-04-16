@@ -17,7 +17,7 @@ item_s = "/"+key.replace(" ", "/").replace(".", "/")+"/"
 firstname = "custom"
 # get the current list of custom shortcuts
 get = lambda cmd: subprocess.check_output(["/bin/bash", "-c", cmd]).decode("utf-8")
-if sys.argv[4]:
+if sys.argv[4] == 1:
     current = eval(get("gsettings get " + key)[3:])
 else:
     current = eval(get("gsettings get " + key)[:])

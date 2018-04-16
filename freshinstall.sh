@@ -79,8 +79,8 @@ sudo apt-get install git
 git config --global user.email "kenney.jnk@gmail.com"
 git config --global user.name "Jack Kenney"
 git config --global credential.helper cache
-mkdir ~/Projects
-cd ~/Projects
+mkdir ~/projects
+cd ~/projects
 git clone "https://github.com/jackkenney/assignments.git"
 git clone "https://github.com/lbialik/brightness-redshift.git"
 git clone "https://github.com/jackkenney/binds-work.git"
@@ -133,5 +133,3 @@ sudo update-grub
 
 # Adding Keyboard shortcuts:
 sh make_keyboard_shortcuts.sh
-
-
