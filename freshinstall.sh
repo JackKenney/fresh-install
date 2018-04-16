@@ -94,10 +94,10 @@ sudo apt install python3
 sudo apt install python3-pip
 pip3 install --upgrade pip3
 
-wget http://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
-sh Anaconda3-4.3.0-Linux-x86_64.sh
-conda create --name cs383 python=3.6
-conda create --name binds python=3.6
+# wget http://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
+# sh Anaconda3-4.3.0-Linux-x86_64.sh
+# conda create --name cs383 python=3.6
+# conda create --name binds python=3.6
 
 #vscode
 sudo apt-get install code
