@@ -111,6 +111,9 @@ sudo apt install xserver-xorg-input-synaptics
 #ubuntu-gnome-desktop
 sudo apt install ubuntu-gnome-desktop
 
+# spotify
+snap install spotify
+
 #LAST
 #catch any trailing packages:
 sudo apt-get upgrade
