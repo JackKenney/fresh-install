@@ -2,6 +2,7 @@ export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
 python3 ./set_keybinding.py 'terminal' 'gnome-terminal' '<Alt>T' 0
 python3 ./set_keybinding.py 'invert' 'xcalib -invert -alter' '<Alt>I' 0
 python3 ./set_keybinding.py 'System Monitor' 'gnome-system-monitor' '<Primary><Alt>Delete' 0
+python3 ./set_keybinding.py 'Suspend' 'systemctl suspend' '<Primary><Alt>Home' 0
 
 python3 ./set_keybinding.py 'touchpad off' 'synclient TouchpadOff=1' '<Alt>N' 0
 python3 ./set_keybinding.py 'touchpad on' 'synclient TouchpadOff=0' '<Alt>M' 0
