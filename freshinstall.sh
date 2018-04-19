@@ -136,3 +136,7 @@ sudo update-grub
 
 # Adding Keyboard shortcuts:
 sh make_keyboard_shortcuts.sh
+
+# Set background accessible:
+gsettings set org.gnome.settings-daemon.plugins.background active true
+
