@@ -20,6 +20,8 @@ sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/
 #GOOGLE
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+# albert
+sudo add-apt-repository ppa:nilarimogard/webupd8
 
 #vscode
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -35,6 +37,8 @@ sudo apt-get update
 #===========================================
 #INSTALL NEEDED PACKAGES:
 echo "installing packages"
+# albert
+sudo apt-get install albert -y  
 # Install Spotify
 sudo apt-get install spotify-client
 
