@@ -16,8 +16,13 @@ subkey1 = key.replace(" ", ".")[:-1]+":"
 item_s = "/"+key.replace(" ", "/").replace(".", "/")+"/"
 firstname = "custom"
 # get the current list of custom shortcuts
-get = lambda cmd: subprocess.check_output(["/bin/bash", "-c", cmd]).decode("utf-8")
-if sys.argv[4]:
+
+
+def get(cmd): return subprocess.check_output(
+    ["/bin/bash", "-c", cmd]).decode("utf-8")
+
+
+if sys.argv[4] == 1:
     current = eval(get("gsettings get " + key)[3:])
 else:
     current = eval(get("gsettings get " + key)[:])
@@ -25,7 +30,7 @@ print(current)
 # make sure the additional keybinding mention is no duplicate
 n = 1
 while True:
-    new = item_s+firstname+str(n)+"/"
+    new = item_s + firstname + str(n)+"/"
     if new in current:
         n = n+1
     else:
