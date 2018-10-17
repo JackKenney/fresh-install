@@ -11,10 +11,10 @@ echo "killing existing installation processes"
 sudo killall dpkg
 sudo dpkg --configure -a
 #=========================================
-#ADD REPOS BELOW HERE:
+# ADD REPOS BELOW HERE:
 echo "adding repos:"
 #PAPER icon and cursor
-sudo add-apt-repository ppa:snwh/pulp
+sudo add-apt-repository ppa:snwh/ppa
 #Arc theme
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/arc-theme.list"
 #GOOGLE
@@ -24,9 +24,9 @@ sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable
 sudo add-apt-repository ppa:nilarimogard/webupd8
 
 #vscode
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+# curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+# sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+# sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 #===========================================
 #REMOVE AUTO UPDATER:
 #APT remove update-notifier
@@ -40,19 +40,19 @@ echo "installing packages"
 # albert
 sudo apt-get install albert -y  
 # Install Spotify
-sudo apt-get install spotify-client
+# sudo apt-get install spotify-client
 
 # Install xcalib (for color inversion)
 sudo apt-get install xcalib
 
 #unity tweak tool
-sudo apt-get install unity-tweak-tool
+# sudo apt-get install unity-tweak-tool
 
 #google chrome stable
 sudo apt-get install google-chrome-stable
 
 #guake
-sudo apt-get install guake
+# sudo apt-get install guake
 
 #compiz
 sudo apt-get install compizconfig-settings-manager
@@ -70,7 +70,7 @@ sudo apt-get install paper-cursor-theme
 sudo apt-get install arc-theme
 
 #java 8 openjdk
-sudo apt-get install openjdk-8-jdk
+# sudo apt-get install openjdk-8-jdk
 
 #r-base language
 sudo apt-get install r-base r-base-dev
@@ -83,11 +83,11 @@ sudo apt-get install git
 git config --global user.email "kenney.jnk@gmail.com"
 git config --global user.name "Jack Kenney"
 git config --global credential.helper cache
-mkdir ~/projects
+# mkdir ~/projects
 cd ~/projects
 git clone "https://github.com/jackkenney/assignments.git"
 git clone "https://github.com/lbialik/brightness-redshift.git"
-git clone "https://github.com/jackkenney/binds-work.git"
+# git clone "https://github.com/jackkenney/binds-work.git"
 cd ..
 
 #python
@@ -100,11 +100,10 @@ pip3 install --upgrade pip3
 
 # wget http://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
 # sh Anaconda3-4.3.0-Linux-x86_64.sh
-# conda create --name cs383 python=3.6
 # conda create --name binds python=3.6
 
 #vscode
-sudo apt-get install code
+# sudo apt-get install code
 
 #brightness controller
 sudo apt install brightness-controller
@@ -113,10 +112,10 @@ sudo apt install brightness-controller
 sudo apt install xserver-xorg-input-synaptics
 
 #ubuntu-gnome-desktop
-sudo apt install ubuntu-gnome-desktop
+# sudo apt install ubuntu-gnome-desktop
 
 # spotify
-snap install spotify
+# snap install spotify
 
 #LAST
 #catch any trailing packages:

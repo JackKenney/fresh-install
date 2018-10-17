@@ -1,5 +1,5 @@
 export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
-python3 ./set_keybinding.py 'terminal' 'gnome-terminal' '<Alt>T' 0
+python3 ./set_keybinding.py 'terminal' 'gnome-terminal' '<Alt>T' 1
 python3 ./set_keybinding.py 'invert' 'xcalib -invert -alter' '<Alt>I' 0
 python3 ./set_keybinding.py 'System Monitor' 'gnome-system-monitor' '<Primary><Alt>Delete' 0
 python3 ./set_keybinding.py 'Suspend' 'systemctl suspend' '<Primary><Alt>Home' 0
@@ -12,10 +12,10 @@ python3 ./set_keybinding.py 'brightness down' 'python3 /home/echo/projects/brigh
 python3 ./set_keybinding.py 'brightness right' 'python3 /home/echo/projects/brightness-redshift/light_adjust.py right' '<Super>Right' 0
 python3 ./set_keybinding.py 'brightness left' 'python3 /home/echo/projects/brightness-redshift/light_adjust.py left' '<Super>Left' 0
 
-python3 ./set_keybinding.py 'rotate normal' 'xrandr --output eDP-1 --rotate normal' '<Super><Shift>Up' 0
-python3 ./set_keybinding.py 'rotate left' 'xrandr --output eDP-1 --rotate left' '<Super><Shift>Left' 0
-python3 ./set_keybinding.py 'rotate right' 'xrandr --output eDP-1 --rotate right' '<Super><Shift>Right' 0
-python3 ./set_keybinding.py 'rotate inverted' 'xrandr --output eDP-1 --rotate inverted' '<Super><Shift>Down' 0
+# python3 ./set_keybinding.py 'rotate normal' 'xrandr --output eDP-1 --rotate normal' '<Super><Shift>Up' 0
+# python3 ./set_keybinding.py 'rotate left' 'xrandr --output eDP-1 --rotate left' '<Super><Shift>Left' 0
+# python3 ./set_keybinding.py 'rotate right' 'xrandr --output eDP-1 --rotate right' '<Super><Shift>Right' 0
+# python3 ./set_keybinding.py 'rotate inverted' 'xrandr --output eDP-1 --rotate inverted' '<Super><Shift>Down' 0
 
 ### Keyboard Shorcut Catalogue:
 

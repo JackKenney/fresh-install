@@ -21,7 +21,7 @@ firstname = "custom"
 def get(cmd): return subprocess.check_output(
     ["/bin/bash", "-c", cmd]).decode("utf-8")
 
-
+print(sys.argv)
 if sys.argv[4] == 1:
     current = eval(get("gsettings get " + key)[3:])
 else:
