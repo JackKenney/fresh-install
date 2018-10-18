@@ -7,10 +7,10 @@ python3 ./set_keybinding.py 'Suspend' 'systemctl suspend' '<Primary><Alt>Home' 0
 python3 ./set_keybinding.py 'touchpad off' 'synclient TouchpadOff=1' '<Alt>N' 0
 python3 ./set_keybinding.py 'touchpad on' 'synclient TouchpadOff=0' '<Alt>M' 0
 
-python3 ./set_keybinding.py 'brightness up' 'python3 /home/echo/projects/brightness-redshift/light_adjust.py up' '<Super>Up' 0
-python3 ./set_keybinding.py 'brightness down' 'python3 /home/echo/projects/brightness-redshift/light_adjust.py down' '<Super>Down' 0
-python3 ./set_keybinding.py 'brightness right' 'python3 /home/echo/projects/brightness-redshift/light_adjust.py right' '<Super>Right' 0
-python3 ./set_keybinding.py 'brightness left' 'python3 /home/echo/projects/brightness-redshift/light_adjust.py left' '<Super>Left' 0
+python3 ./set_keybinding.py 'brightness up' 'python3 /home/echo/projects/brightness-redshift/light_adjust.py up' '<Primary><Super>Up' 0
+python3 ./set_keybinding.py 'brightness down' 'python3 /home/echo/projects/brightness-redshift/light_adjust.py down' '<Primary><Super>Down' 0
+python3 ./set_keybinding.py 'brightness right' 'python3 /home/echo/projects/brightness-redshift/light_adjust.py right' '<Primary><Super>Right' 0
+python3 ./set_keybinding.py 'brightness left' 'python3 /home/echo/projects/brightness-redshift/light_adjust.py left' '<Primary><Super>Left' 0
 
 # python3 ./set_keybinding.py 'rotate normal' 'xrandr --output eDP-1 --rotate normal' '<Super><Shift>Up' 0
 # python3 ./set_keybinding.py 'rotate left' 'xrandr --output eDP-1 --rotate left' '<Super><Shift>Left' 0

@@ -22,10 +22,11 @@ def get(cmd): return subprocess.check_output(
     ["/bin/bash", "-c", cmd]).decode("utf-8")
 
 print(sys.argv)
-if sys.argv[4] == 1:
-    current = eval(get("gsettings get " + key)[3:])
-else:
-    current = eval(get("gsettings get " + key)[:])
+# string = get("gsettings get " + key)
+# if string[:4]=='':
+#     current = eval([3:])
+# else:
+current = eval(get("gsettings get " + key)[:])
 print(current)
 # make sure the additional keybinding mention is no duplicate
 n = 1
